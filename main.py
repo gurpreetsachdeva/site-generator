@@ -26,7 +26,7 @@ def write_rss(fn: str, episodes: typing.List[episodes.Episode]) -> None:
         rss.write_xml(fp)
 
 
-def main():
+def main(args):
     spreadsheet_id = '13EoEqvqr3dR4eVW6twNTooxBl3ayNhlyKO7ip0zykKE'
     with open('credentials.json', 'r') as json_file:
         client_config = json.load(json_file)
@@ -40,8 +40,14 @@ def main():
         episode = episodes.Episode(title, int(season), blog_url, date, youtube_id)
         episodes_list.append(episode)
 
-    write_rss('spring-tips.xml', episodes_list)
+    if len(args) == 2:
+        fn = args[0]
+    else:
+        fn = 'spring-tips.xml'
+    write_rss(fn, episodes_list)
 
 
 if __name__ == '__main__':
-    main()
+    import sys
+
+    main(sys.argv)
