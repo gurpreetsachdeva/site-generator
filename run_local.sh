@@ -5,5 +5,5 @@ pipenv run python main.py
 FN=spring-tips.xml
 git pull
 git add $FN
-git commit -am "committing $FN at %s $( date +%s )"
+git commit -am "committing $FN at $( date )"
 git push
