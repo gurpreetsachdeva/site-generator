@@ -12,8 +12,8 @@ def build_rss_item_for_episode(episode: episodes.Episode) -> PyRSS2Gen.RSSItem:
     return PyRSS2Gen.RSSItem(title=episode.title, link=episode.blog_url, description='', pubDate=episode.date)
 
 
-def write_rss(fn: str, episodes: typing.List[episodes.Episode]) -> None:
-    items: typing.List[PyRSS2Gen.RSSItem] = [build_rss_item_for_episode(e) for e in episodes]
+def write_rss(fn: str, eps: typing.List[episodes.Episode]) -> None:
+    items: typing.List[PyRSS2Gen.RSSItem] = [build_rss_item_for_episode(e) for e in eps]
     rss = PyRSS2Gen.RSS2(
         title="Spring Tips",
         link="http://bit.ly/spring-tips-playlist",
