@@ -8,7 +8,8 @@ The result of this processor is an RSS feed (`feed.rss`) that other clients can 
 
 Two files are required to build and run the application: `credentials.json` and `token.pickle`.
 
-The first file, `credentials.json`, can be obtained by registering an application with Google Cloud. I have stored my particular version of this file in a Lastpass entry. 
+The first file, `credentials.json`, can be obtained by registering an application with Google Cloud. 
+I have stored my particular version of this file in a Lastpass folder called `spring-tips-sheet`. You should do something (secure) with yours. Do _not_ check it into the code!  
 
 If you run the program with only the first parameter present, it'll generate a `token.pickle` in the current directory. 
 **But**, in order to do so, the program will open a browser and prompt you to approve the request. So, you'll need to do this on your local machine before running it in a headless environment.
