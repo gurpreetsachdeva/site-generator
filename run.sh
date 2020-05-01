@@ -7,4 +7,4 @@ pipenv install
 ls -la
 du -hs token.pickle
 du -hs credentials.json
-pipenv run python sheets.py
+pipenv run python main.py
