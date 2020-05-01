@@ -33,7 +33,6 @@ jobs:
       - name: Run the Google Sheets Processor
         run: |
           pipenv install
-          echo "hello "  |  base64
           echo $TICKLED_TOKEN | base64 -d > token.pickle
           echo $CREDENTIALS_JSON | base64 -d > credentials.json
           ls -la
