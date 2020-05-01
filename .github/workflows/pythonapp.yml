@@ -3,11 +3,17 @@
 
 name: Python application
 
+env:
+  CREDENTIALS_JSON: ${{ secrets.CREDENTIALS_JSON  }}
+  PICKLED_TOKEN: ${{ secrets.PICKLED_TOKEN  }}
+
 on:
   push:
     branches: [ master ]
   pull_request:
     branches: [ master ]
+  schedule:
+    - cron:  '55 3 * * *'
 
 jobs:
   build:
@@ -15,19 +21,27 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
-    - name: Install pipenv
-      uses: dschep/install-pipenv-action@v1
+      - uses: actions/checkout@v2
+      - name: Install pipenv
+        uses: dschep/install-pipenv-action@v1
 
-    - name: Set up Python 3.7
-      uses: actions/setup-python@v1
-      with:
-        python-version: 3.7
+      - name: Set up Python 3.7
+        uses: actions/setup-python@v1
+        with:
+          python-version: 3.7
 
-    - name: Install dependencies
-      run: |
-        pipenv install 
-        
+      - name: Run the Google Sheets Processor
+        run: |
+          pipenv install
+          echo "hello "  |  base64
+          echo $TICKLED_TOKEN | base64 -d > token.pickle
+          echo $CREDENTIALS_JSON | base64 -d > credentials.json
+          ls -la
+          du -hs token.pickle
+          du -hs credentials.json
+
+          pipenv run python sheets.py
+
 #       run: |
 #         python -m pip install --upgrade pip
 #         pip install flake8 pytest
