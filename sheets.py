@@ -54,4 +54,3 @@ class GSheet(object):
         token = self._obtain_token(credentials)
         self.service = build('sheets', 'v4', credentials=token)
         self.id = spreadsheet_id
-
