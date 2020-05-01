@@ -27,7 +27,7 @@ jobs:
         with:
           python-version: 3.7
 
-      - name: Run
-        run: ./run.sh
+      - name: Run the Google Sheet Ingest Routine 
+        run: cd google-sheet-ingest && ./run.sh
 
 
