@@ -1,7 +1,7 @@
 #!/bin/bash
 
 pipenv install
-echo $TICKLED_TOKEN | base64 -d > token.pickle
+echo $PICKLED_TOKEN | base64 -d > token.pickle
 echo $CREDENTIALS_JSON   > credentials.json
 ls -la
 du -hs token.pickle
