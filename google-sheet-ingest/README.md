@@ -1,8 +1,10 @@
-# Spring Tips Google Sheet Feed Processor 
+# Spring Tips Site Generator 
 
 This processor down and makes available as an RSS feed the latest information about all the published Spring Tips for ease of integration into other feeds. This is the canonical feed about which videos were published and when. 
 
-The result of this processor is an RSS feed (`feed.rss`) that other clients can in turn consume when updating other indexes.
+The result of this processor is an RSS feed (`spring-tips.xml`) that other clients can in turn consume when updating other indexes. The output of this process [lives in on the web](http://SpringTipsLive.io/rss.xml). 
+
+Perhaps one day it'll also generate a spiffy looking website. 
 
 ## Building 
 

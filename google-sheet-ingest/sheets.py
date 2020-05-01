@@ -15,9 +15,7 @@ class GSheet(object):
 
     @staticmethod
     def _obtain_token(credentials_config_str: str) -> Credentials:
-        '''
-            If modifying these scopes, delete the file token.pickle.
-        '''
+        # if modifying these scopes, delete the file token.pickle.
         scopes = ['https://www.googleapis.com/auth/drive']
         credentials: Credentials = None
         if os.path.exists('token.pickle'):
